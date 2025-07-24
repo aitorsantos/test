@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  crewai:
+    image: python:3.10
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: python run_agent.py
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - WEAVIATE_URL=${WEAVIATE_URL}
+      - WEAVIATE_API_KEY=${WEAVIATE_API_KEY}
+      - TEAMS_WEBHOOK_URL=${TEAMS_WEBHOOK_URL}
+      - DAILY_REPORT_EMAIL=${DAILY_REPORT_EMAIL}
